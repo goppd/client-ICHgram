@@ -1,0 +1,150 @@
+.resetPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoCard {
+  width: 100%;
+  border-bottom: 1px solid rgba(219, 219, 219, 1);
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  padding: 3px 44px;
+  margin-bottom: 84px;
+}
+
+.logoCard img {
+  height: 55px;
+}
+
+.resetCard {
+  width: 100%;
+  max-width: 390px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  padding: 25px 45px;
+  text-align: center;
+}
+
+.resetCard img {
+  margin-bottom: 14px;
+}
+
+.resetCard h2 {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(115, 115, 115, 1);
+  margin-bottom: 16px;
+}
+
+.resetForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.resetForm input {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  padding: 11px 9px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  background-color: rgba(250, 250, 250, 1);
+  color: rgba(199, 199, 199, 1);
+}
+
+.resetForm button {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(0, 149, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  padding: 7px 82px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+  cursor: pointer;
+}
+
+.error {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: rgba(255, 0, 20, 1);
+  margin: 2px 0 6px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.divider div {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(219, 219, 219, 1);
+}
+
+.divider p {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(115, 115, 115, 1);
+}
+
+/* ссылки */
+.link {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(38, 38, 38, 1);
+  text-decoration: none;
+  padding: 1px 0;
+  margin-bottom: 84px;
+}
+
+.bottom {
+  width: 100%;
+  max-width: 390px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  padding: 16px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgba(250, 250, 250, 1);
+  padding: 14px 0;
+}
+
+.bottom a {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(38, 38, 38, 1);
+}
