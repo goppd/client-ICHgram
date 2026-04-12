@@ -1,15 +1,37 @@
-function Footer() {
+import { NavLink } from 'react-router-dom'
+import styles from './styles.module.css'
+import ICHgramIcon from '../../assets/icons/ICHgram.svg'
+
+const Footer = ({ className }) => {
+  const getClass = ({ isActive }) =>
+    isActive ? `${styles.item} ${styles.active}` : styles.item
+
   return (
-    <footer
-      style={{
-        textAlign: 'center',
-        padding: '20px',
-        fontSize: '12px',
-        color: '#737373',
-      }}
-    >
-      <div>Home · Search · Explore · Messages · Notifications · Create</div>
-      <div style={{ marginTop: '10px' }}>© 2024 ICHgram</div>
+    <footer className={`${styles.footer} ${className}`}>
+      <nav className={styles.nav}>
+        <NavLink to="/main" className={getClass}>
+          <span>Home</span>
+        </NavLink>
+        <NavLink to="/search" className={getClass}>
+          <span>Search</span>
+        </NavLink>
+        <NavLink to="/explore" className={getClass}>
+          <span>Explore</span>
+        </NavLink>
+        <NavLink to="/messages" className={getClass}>
+          <span>Messages</span>
+        </NavLink>
+        <NavLink to="/notifications" className={getClass}>
+          <span>Notifications</span>
+        </NavLink>
+        <NavLink to="/create" className={getClass}>
+          <span>Create</span>
+        </NavLink>
+      </nav>
+
+      <div className={styles.copyright}>
+        <img src={ICHgramIcon} alt="2024 ICHgram" />
+      </div>
     </footer>
   )
 }
