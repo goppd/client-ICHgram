@@ -44,3 +44,12 @@
   height: 24px;
   width: 24px;
 }
+
+button.item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}

@@ -1,6 +1,4 @@
 .feed {
-  /* margin-left: 245px; */
-
   padding-top: 58px;
   padding-left: 78px;
 }
@@ -12,7 +10,6 @@
   max-width: 900px;
   width: 100%;
   justify-content: flex-start;
-  /* margin: 0 auto; */
 }
 
 .endBlock {

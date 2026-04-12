@@ -9,41 +9,68 @@ import ichIcon from '../../assets/icons/ich.svg'
 import ichgram from '../../assets/images/ICHgram.svg'
 import { NavLink } from 'react-router-dom'
 
-const Sidebar = () => {
-  const getClass = ({ isActive }) =>
-    isActive ? `${styles.item} ${styles.active}` : styles.item
+const Sidebar = ({ onOpen, activePanel }) => {
+  const getClass = ({ isActive }) => {
+    if (activePanel) return styles.item
+    return isActive ? `${styles.item} ${styles.active}` : styles.item
+  }
+
   return (
     <aside className={styles.sidebar}>
       <img src={ichgram} alt="ICHgram Logo" />
 
       <nav className={styles.nav}>
-        <NavLink to="/main" className={getClass}>
-          <img src={homeIcon} alt="HomeIcon" />
+        <NavLink to="/main" className={getClass} onClick={() => onOpen(null)}>
+          <img src={homeIcon} alt="" />
           <span>Home</span>
         </NavLink>
-        <NavLink to="/search" className={getClass}>
-          <img src={searchIcon} alt="SearchIcon" />
+
+        <button
+          onClick={() => onOpen('search')}
+          className={`${styles.item} ${
+            activePanel === 'search' ? styles.active : ''
+          }`}
+        >
+          <img src={searchIcon} alt="" />
           <span>Search</span>
-        </NavLink>
-        <NavLink to="/explore" className={getClass}>
-          <img src={exploreIcon} alt="ExploreIcon" />
+        </button>
+
+        <NavLink
+          to="/explore"
+          className={getClass}
+          onClick={() => onOpen(null)}
+        >
+          <img src={exploreIcon} alt="" />
           <span>Explore</span>
         </NavLink>
-        <NavLink to="/messages" className={getClass}>
-          <img src={messagesIcon} alt="MessagesIcon" />
+
+        <NavLink
+          to="/messages"
+          className={getClass}
+          onClick={() => onOpen(null)}
+        >
+          <img src={messagesIcon} alt="" />
           <span>Messages</span>
         </NavLink>
-        <NavLink to="/notifications" className={getClass}>
-          <img src={notificationIcon} alt="NotificationIcon" />
+
+        <button
+          onClick={() => onOpen('notifications')}
+          className={`${styles.item} ${
+            activePanel === 'notifications' ? styles.active : ''
+          }`}
+        >
+          <img src={notificationIcon} alt="" />
           <span>Notifications</span>
-        </NavLink>
-        <NavLink to="/create" className={getClass}>
-          <img src={createIcon} alt="CreateIcon" />
+        </button>
+
+        <NavLink to="/create" className={getClass} onClick={() => onOpen(null)}>
+          <img src={createIcon} alt="" />
           <span>Create</span>
         </NavLink>
       </nav>
-      <NavLink to="/profile" className={getClass}>
-        <img src={ichIcon} alt="ICHIcon" />
+
+      <NavLink to="/profile" className={getClass} onClick={() => onOpen(null)}>
+        <img src={ichIcon} alt="" />
         <span>Profile</span>
       </NavLink>
     </aside>

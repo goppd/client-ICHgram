@@ -1,21 +1,32 @@
 import Sidebar from '../sidebar'
 import Footer from '../footer'
-import { useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import styles from './styles.module.css'
+import Search from '../search'
+import Notifications from '../notifications'
 
 const Layout = ({ children }) => {
-  const location = useLocation()
+  const [activePanel, setActivePanel] = useState(null)
 
-  const isFeed = location.pathname === '/main'
+  const handleClose = () => {
+    setActivePanel(null)
+  }
 
   return (
     <div className={styles.layout}>
-      <Sidebar />
+      <Sidebar onOpen={setActivePanel} activePanel={activePanel} />
 
       <div className={styles.content}>
         {children}
 
-        <Footer className={isFeed ? styles.footerStatic : styles.footerFixed} />
+        {activePanel && (
+          <div className={styles.overlay} onClick={handleClose} />
+        )}
+
+        {activePanel === 'search' && <Search />}
+        {activePanel === 'notifications' && <Notifications />}
+
+        <Footer />
       </div>
     </div>
   )

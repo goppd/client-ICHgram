@@ -1,0 +1,93 @@
+.search {
+  position: fixed;
+  top: 0;
+  left: 245px;
+  width: 400px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 10;
+  padding: 16px 22px 0 16px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: 1px solid rgba(219, 219, 219, 1);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header h2 {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(239, 239, 239, 1);
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(115, 115, 115, 1);
+}
+
+.crossIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.crossIcon:hover {
+  opacity: 1;
+}
+
+.results {
+  margin-top: 47px;
+}
+
+.results p {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 26px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.user span {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+}

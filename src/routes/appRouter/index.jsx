@@ -5,6 +5,9 @@ import Register from '../../pages/register'
 import MainPage from '../../pages/main'
 import CreatePage from '../../pages/create'
 import Layout from '../../components/layout'
+import ExplorePage from '../../pages/explore'
+import MessagesPage from '../../pages/messages'
+import ProfilePage from '../../pages/profile'
 
 function AppRouter() {
   return (
@@ -13,6 +16,32 @@ function AppRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reset" element={<Reset />} />
+      <Route
+        path="/explore"
+        element={
+          <Layout>
+            <ExplorePage />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/messages"
+        element={
+          <Layout>
+            <MessagesPage />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/profile"
+        element={
+          <Layout>
+            <ProfilePage />
+          </Layout>
+        }
+      />
       <Route
         path="/main"
         element={
