@@ -1,4 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import API from '../../services/api'
 import styles from './styles.module.css'
 
 const ExplorePage = () => {
@@ -7,15 +9,14 @@ const ExplorePage = () => {
   const [loading, setLoading] = useState(false)
   const [hasMore, setHasMore] = useState(true)
 
+  const navigate = useNavigate()
+
   const fetchPosts = useCallback(async () => {
     setLoading(true)
 
     try {
-      const res = await fetch(
-        `http://localhost:5000/api/posts?page=${page}&limit=9`,
-      )
-
-      const data = await res.json()
+      const res = await API.get(`/posts?page=${page}&limit=9`)
+      const data = res.data
 
       if (data.length === 0) {
         setHasMore(false)
@@ -50,11 +51,15 @@ const ExplorePage = () => {
     }
 
     window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [loading, hasMore])
+
+  const handleClick = (post) => {
+    const id = post.user?._id
+    if (!id) return
+
+    navigate(`/profile/${id}`)
+  }
 
   return (
     <div className={styles.explore}>
@@ -63,6 +68,8 @@ const ExplorePage = () => {
           <div
             key={post._id + index}
             className={`${styles.item} ${index % 5 === 0 ? styles.big : ''}`}
+            onClick={() => handleClick(post)}
+            style={{ cursor: 'pointer' }}
           >
             <img src={post.image} alt="" />
           </div>

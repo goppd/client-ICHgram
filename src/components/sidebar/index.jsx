@@ -63,13 +63,23 @@ const Sidebar = ({ onOpen, activePanel }) => {
           <span>Notifications</span>
         </button>
 
-        <NavLink to="/create" className={getClass} onClick={() => onOpen(null)}>
+        <button
+          onClick={() => onOpen('create')}
+          className={`${styles.item} ${
+            activePanel === 'create' ? styles.active : ''
+          }`}
+        >
           <img src={createIcon} alt="" />
           <span>Create</span>
-        </NavLink>
+        </button>
       </nav>
 
-      <NavLink to="/profile" className={getClass} onClick={() => onOpen(null)}>
+      <NavLink
+        to="/profile"
+        end={false}
+        className={getClass}
+        onClick={() => onOpen(null)}
+      >
         <img src={ichIcon} alt="" />
         <span>Profile</span>
       </NavLink>

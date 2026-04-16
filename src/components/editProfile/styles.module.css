@@ -1,0 +1,113 @@
+.wrapper {
+  max-width: 900px;
+  padding: 48px 167px 117px 167px;
+}
+
+.title {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 44px;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(239, 239, 239, 1);
+  padding: 16px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  flex: 1;
+  margin-left: 16px;
+}
+
+.username {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  color: rgba(115, 115, 115, 1);
+}
+
+.photoBtn {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  background: rgba(0, 149, 246, 1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form label {
+  font-weight: 500;
+}
+
+.form input,
+.form textarea {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  border-radius: 12px;
+}
+
+.form label {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.saveBtn {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 70px;
+  background: rgba(0, 149, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  padding: 8px 90px;
+  border-radius: 8px;
+  cursor: pointer;
+}

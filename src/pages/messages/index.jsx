@@ -1,5 +1,12 @@
+import Layout from '../../components/layout'
+import Messages from '../../components/messages'
+
 const MessagesPage = () => {
-  return <div>Messages</div>
+  return (
+    <Layout noOffset>
+      <Messages />
+    </Layout>
+  )
 }
 
 export default MessagesPage

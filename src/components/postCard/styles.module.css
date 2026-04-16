@@ -72,6 +72,7 @@ b {
   display: block;
   border: 1px solid rgba(219, 219, 219, 1);
   border-radius: 3.5px;
+  cursor: pointer;
 }
 
 .actions {

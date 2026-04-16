@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import API from '../../services/api'
+import styles from './styles.module.css'
+import emojiIcon from '../../assets/icons/smile.svg'
+import shareIcon from '../../assets/icons/share.svg'
 
-const CreatePost = () => {
+const CreatePost = ({ onClose, onSubmit, user }) => {
   const [caption, setCaption] = useState('')
   const [image, setImage] = useState(null)
   const [preview, setPreview] = useState(null)
@@ -20,47 +22,75 @@ const CreatePost = () => {
     reader.readAsDataURL(file)
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async () => {
+    if (!image) return
 
-    if (!image) {
-      alert('Выбери картинку')
-      return
-    }
-
-    try {
-      await API.post('/posts', {
-        caption,
-        image,
-      })
-
-      alert('Пост создан')
-      setCaption('')
-      setImage(null)
-      setPreview(null)
-    } catch (err) {
-      console.error(err)
-    }
+    await onSubmit({ caption, image })
+    onClose()
   }
 
   return (
-    <div>
-      <h2>Create Post</h2>
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        {/* HEADER */}
+        <div className={styles.top}>
+          <h3>Create new post</h3>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Описание..."
-          value={caption}
-          onChange={(e) => setCaption(e.target.value)}
-        />
+          <button
+            className={styles.shareBtn}
+            onClick={handleSubmit}
+            disabled={!image}
+          >
+            Share
+          </button>
+        </div>
 
-        <input type="file" onChange={handleImageChange} />
+        <div className={styles.body}>
+          <div className={styles.left}>
+            {preview ? (
+              <img src={preview} alt="preview" />
+            ) : (
+              <label className={styles.upload}>
+                <input type="file" onChange={handleImageChange} hidden />
+                <img
+                  src={shareIcon}
+                  alt="upload"
+                  className={styles.uploadIcon}
+                />
+                <span>Upload photo</span>
+              </label>
+            )}
+          </div>
 
-        {preview && <img src={preview} width="200" />}
+          <div className={styles.right}>
+            <div className={styles.topRight}>
+              <div className={styles.user}>
+                <img
+                  src={user?.avatar}
+                  alt="avatar"
+                  className={styles.avatar}
+                />
+                <span>{user?.username}</span>
+              </div>
 
-        <button type="submit">Post</button>
-      </form>
+              <textarea
+                className={styles.textarea}
+                value={caption}
+                onChange={(e) => setCaption(e.target.value)}
+                maxLength={2200}
+                placeholder="Write a caption..."
+              />
+
+              <div className={styles.bottomRow}>
+                <img src={emojiIcon} alt="emoji" className={styles.emoji} />
+                <div className={styles.counter}>{caption.length}/2200</div>
+              </div>
+            </div>
+
+            <div className={styles.bottomRight}></div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.noOffset {
+  margin-left: 0;
+}
+
 .footerFixed {
   position: fixed;
   bottom: 0;
@@ -21,6 +25,11 @@
   position: static;
   width: 100%;
   margin-top: 40px;
+}
+
+.footerAbove {
+  position: relative;
+  z-index: 200;
 }
 
 .overlay {

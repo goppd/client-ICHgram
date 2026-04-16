@@ -1,0 +1,65 @@
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 245px;
+  width: calc(100% - 245px);
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+/* MODAL */
+.modal {
+  width: 100%;
+  max-width: 400px;
+
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ITEM */
+.item {
+  padding: 18px;
+  border: none;
+  background: none;
+
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(219, 219, 219, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+/* HOVER */
+.item:hover {
+  background: #fafafa;
+}
+
+/* DELETE */
+.danger {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(237, 73, 86, 1);
+}

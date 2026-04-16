@@ -1,0 +1,141 @@
+.profile {
+  width: 100%;
+}
+
+.inner {
+  max-width: 1200px;
+  padding: 30px 110px 60px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.header {
+  display: flex;
+  gap: 95px;
+  margin: 40px 0;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.info {
+  flex: 1;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.editBtn {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 30px;
+  border: none;
+  background-color: rgba(239, 239, 239, 1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.editBtn:hover {
+  background: rgba(219, 219, 219, 1);
+}
+
+.followBtn {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  padding: 7px 20px;
+  background-color: rgba(0, 149, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.messageBtn {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 16px;
+  border: none;
+  background: rgba(239, 239, 239, 1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.stats b {
+  font-family: Roboto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.stats span {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.bio p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  margin: 2px 0;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.post {
+  flex: 1 1 calc(33.333% - 4px);
+  aspect-ratio: 1 / 1;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
